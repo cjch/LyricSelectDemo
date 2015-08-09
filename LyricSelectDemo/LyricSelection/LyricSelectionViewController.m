@@ -59,6 +59,12 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
 #pragma mark - Public Method
 - (void)setSelectionWithStartRow:(NSInteger)startRow endRow:(NSInteger)endRow
 {
+    if (self.startRow >= self.lyricArray.count) {
+        self.startRow = self.lyricArray.count - 1;
+    }
+    if (endRow < startRow) {
+        endRow = startRow;
+    }
     self.startRow = startRow;
     self.endRow = endRow;
 }
@@ -91,7 +97,7 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
 {
     self.startRow = rowNo;
     self.endRow = MAX(self.startRow, self.endRow);
-    
+    [self updatePanView];
     [self.tableView reloadData];
 }
 
@@ -99,6 +105,7 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
 {
     self.endRow = rowNo;
     self.startRow = MIN(self.startRow, self.endRow);
+    [self updatePanView];
     [self.tableView reloadData];
 }
 

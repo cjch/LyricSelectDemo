@@ -42,7 +42,7 @@
 #pragma mark - Event response
 - (IBAction)onSelectButtonPressed:(UIButton *)sender {
     NSMutableArray *dataArray = [NSMutableArray new];
-    for (int i = 0; i < 30; i++) {
+    for (int i = 0; i < 20; i++) {
         [dataArray addObject:[NSString stringWithFormat:@"lyric line %d", i]];
     }
     
