@@ -14,6 +14,9 @@
 		F5713D171B76F282007DBC13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5713D161B76F282007DBC13 /* Images.xcassets */; };
 		F5713D1A1B76F282007DBC13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5713D181B76F282007DBC13 /* LaunchScreen.xib */; };
 		F5713D261B76F282007DBC13 /* LyricSelectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5713D251B76F282007DBC13 /* LyricSelectDemoTests.m */; };
+		F5713D311B76F3F7007DBC13 /* LyricSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5713D301B76F3F7007DBC13 /* LyricSelectionViewController.m */; };
+		F5713D371B76F518007DBC13 /* LyricSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5713D351B76F518007DBC13 /* LyricSelectionTableViewCell.m */; };
+		F5713D381B76F518007DBC13 /* LyricSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5713D361B76F518007DBC13 /* LyricSelectionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		F5713D1F1B76F282007DBC13 /* LyricSelectDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyricSelectDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5713D241B76F282007DBC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5713D251B76F282007DBC13 /* LyricSelectDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyricSelectDemoTests.m; sourceTree = "<group>"; };
+		F5713D2F1B76F3F7007DBC13 /* LyricSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LyricSelectionViewController.h; path = LyricSelection/LyricSelectionViewController.h; sourceTree = "<group>"; };
+		F5713D301B76F3F7007DBC13 /* LyricSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LyricSelectionViewController.m; path = LyricSelection/LyricSelectionViewController.m; sourceTree = "<group>"; };
+		F5713D341B76F518007DBC13 /* LyricSelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LyricSelectionTableViewCell.h; path = LyricSelection/LyricSelectionTableViewCell.h; sourceTree = "<group>"; };
+		F5713D351B76F518007DBC13 /* LyricSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LyricSelectionTableViewCell.m; path = LyricSelection/LyricSelectionTableViewCell.m; sourceTree = "<group>"; };
+		F5713D361B76F518007DBC13 /* LyricSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LyricSelectionTableViewCell.xib; path = LyricSelection/LyricSelectionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 				F5713D161B76F282007DBC13 /* Images.xcassets */,
 				F5713D181B76F282007DBC13 /* LaunchScreen.xib */,
 				F5713D091B76F282007DBC13 /* Supporting Files */,
+				F5713D331B76F409007DBC13 /* LyricSelection */,
 			);
 			path = LyricSelectDemo;
 			sourceTree = "<group>";
@@ -117,6 +126,18 @@
 				F5713D241B76F282007DBC13 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5713D331B76F409007DBC13 /* LyricSelection */ = {
+			isa = PBXGroup;
+			children = (
+				F5713D2F1B76F3F7007DBC13 /* LyricSelectionViewController.h */,
+				F5713D301B76F3F7007DBC13 /* LyricSelectionViewController.m */,
+				F5713D341B76F518007DBC13 /* LyricSelectionTableViewCell.h */,
+				F5713D351B76F518007DBC13 /* LyricSelectionTableViewCell.m */,
+				F5713D361B76F518007DBC13 /* LyricSelectionTableViewCell.xib */,
+			);
+			name = LyricSelection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5713D381B76F518007DBC13 /* LyricSelectionTableViewCell.xib in Resources */,
 				F5713D151B76F282007DBC13 /* Main.storyboard in Resources */,
 				F5713D1A1B76F282007DBC13 /* LaunchScreen.xib in Resources */,
 				F5713D171B76F282007DBC13 /* Images.xcassets in Resources */,
@@ -219,7 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5713D371B76F518007DBC13 /* LyricSelectionTableViewCell.m in Sources */,
 				F5713D121B76F282007DBC13 /* ViewController.m in Sources */,
+				F5713D311B76F3F7007DBC13 /* LyricSelectionViewController.m in Sources */,
 				F5713D0F1B76F282007DBC13 /* AppDelegate.m in Sources */,
 				F5713D0C1B76F282007DBC13 /* main.m in Sources */,
 			);

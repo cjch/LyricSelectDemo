@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LyricSelectionTableViewCell.h
 //  LyricSelectDemo
 //
 //  Created by chenjie on 15/8/9.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface ViewController : UIViewController
-
+@interface LyricSelectionTableViewCell : UITableViewCell
 
 @end
-
