@@ -49,6 +49,7 @@
     LyricSelectionViewController *vc = [LyricSelectionViewController getInstance];
     vc.delegate = self;
     vc.lyricArray = dataArray;
+    [vc setSelectionWithStartRow:0 endRow:5];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
