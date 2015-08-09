@@ -7,8 +7,11 @@
 //
 
 #import "LyricSelectionViewController.h"
+#import "LyricSelectionTableViewCell.h"
 
-@interface LyricSelectionViewController ()
+static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableViewCell";
+
+@interface LyricSelectionViewController () <UITableViewDataSource, UITableViewDelegate, LyricSelectionCellDelegate>
 
 @property (nonatomic) NSInteger startRow;
 @property (nonatomic) NSInteger endRow;
@@ -29,6 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"lyric selection";
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"LyricSelectionTableViewCell" bundle:nil] forCellReuseIdentifier:LyricSelectionCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,5 +41,44 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Public Method
+- (void)setSelectionWithStartRow:(NSInteger)startRow endRow:(NSInteger)endRow
+{
+    self.startRow = startRow;
+    self.endRow = endRow;
+}
+
+#pragma mark - UITableViewDataSource, UITableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.lyricArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LyricSelectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:LyricSelectionCellIdentifier];
+    cell.delegate = self;
+    cell.lyricText = self.lyricArray[indexPath.row];
+    cell.rowNo = indexPath.row;
+    cell.lyricSelected = indexPath.row >= self.startRow && indexPath.row <= self.endRow;
+    
+    return cell;
+}
+
+#pragma mark - LyricSelectionCellDelegate
+- (void)lyricSelectionCellDidPressedStartButtonInRow:(NSInteger)rowNo
+{
+    
+}
+
+- (void)lyricSelectionCellDidPressedEndButtonInRow:(NSInteger)rowNo
+{
+    
+}
 
 @end

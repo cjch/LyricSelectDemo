@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LyricSelectionCellDelegate <NSObject>
+
+- (void)lyricSelectionCellDidPressedStartButtonInRow:(NSInteger)rowNo;
+- (void)lyricSelectionCellDidPressedEndButtonInRow:(NSInteger)rowNo;
+
+@end
+
 @interface LyricSelectionTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<LyricSelectionCellDelegate> delegate;
+@property (nonatomic, strong) NSString *lyricText;  ///< 一行歌词
+@property (nonatomic, assign) NSInteger rowNo; ///< 第几行
+
+@property (nonatomic, assign) BOOL lyricSelected;
 
 @end

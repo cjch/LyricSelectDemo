@@ -8,6 +8,15 @@
 
 #import "LyricSelectionTableViewCell.h"
 
+@interface LyricSelectionTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *lyricLabel;
+
+- (IBAction)onStartButtonPressed:(UIButton *)sender;
+- (IBAction)onEndButtonPressed:(UIButton *)sender;
+
+@end
+
 @implementation LyricSelectionTableViewCell
 
 - (void)awakeFromNib {
@@ -18,6 +27,37 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+#pragma mark - event response
+- (IBAction)onStartButtonPressed:(UIButton *)sender {
+    if (self.delegate) {
+        [self.delegate lyricSelectionCellDidPressedStartButtonInRow:self.rowNo];
+    }
+}
+
+- (IBAction)onEndButtonPressed:(UIButton *)sender {
+    if (!self.delegate) {
+        [self.delegate lyricSelectionCellDidPressedEndButtonInRow:self.rowNo];
+    }
+}
+
+#pragma mark - setter
+- (void)setLyricText:(NSString *)lyricText
+{
+    _lyricText = lyricText;
+    self.lyricLabel.text = lyricText;
+}
+
+- (void)setLyricSelected:(BOOL)lyricSelected
+{
+    _lyricSelected = lyricSelected;
+    if (lyricSelected) {
+        self.backgroundColor = [UIColor redColor];
+    }
+    else{
+        self.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 @end
