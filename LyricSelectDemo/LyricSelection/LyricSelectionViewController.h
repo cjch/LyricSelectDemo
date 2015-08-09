@@ -10,7 +10,6 @@
 
 @protocol LyricSelectionDelegate <NSObject>
 
-@required
 - (void)lyricSelectionDidSelectStartRow:(NSInteger)startRow endRow:(NSInteger)endRow;
 
 @end
@@ -18,6 +17,7 @@
 
 @interface LyricSelectionViewController : UIViewController
 
+@property (nonatomic, weak) id<LyricSelectionDelegate> delegate;
 @property (nonatomic, strong) NSArray *lyricArray;
 
 + (instancetype)getInstance;

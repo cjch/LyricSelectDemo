@@ -32,7 +32,9 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"lyric selection";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(onDoneButtonPressed)];
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"LyricSelectionTableViewCell" bundle:nil] forCellReuseIdentifier:LyricSelectionCellIdentifier];
 }
 
@@ -67,18 +69,34 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
     cell.rowNo = indexPath.row;
     cell.lyricSelected = indexPath.row >= self.startRow && indexPath.row <= self.endRow;
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 #pragma mark - LyricSelectionCellDelegate
 - (void)lyricSelectionCellDidPressedStartButtonInRow:(NSInteger)rowNo
 {
+    self.startRow = rowNo;
+    self.endRow = MAX(self.startRow, self.endRow);
     
+    [self.tableView reloadData];
 }
 
 - (void)lyricSelectionCellDidPressedEndButtonInRow:(NSInteger)rowNo
 {
+    self.endRow = rowNo;
+    self.startRow = MIN(self.startRow, self.endRow);
     
+    [self.tableView reloadData];
+}
+
+#pragma mark - eventResponse
+- (void)onDoneButtonPressed
+{
+    if ([self.delegate respondsToSelector:@selector(lyricSelectionDidSelectStartRow:endRow:)]) {
+        [self.delegate lyricSelectionDidSelectStartRow:self.startRow endRow:self.endRow];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

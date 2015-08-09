@@ -36,12 +36,19 @@
 - (void)lyricSelectionDidSelectStartRow:(NSInteger)startRow endRow:(NSInteger)endRow
 {
     self.resultStartLabel.text = [NSString stringWithFormat:@"start at row: %ld", (long)startRow];
-    self.resultEndLabel.text   = [NSString stringWithFormat:@"end at row: %ld",   (long)startRow];
+    self.resultEndLabel.text   = [NSString stringWithFormat:@"end at row: %ld",   (long)endRow];
 }
 
 #pragma mark - Event response
 - (IBAction)onSelectButtonPressed:(UIButton *)sender {
+    NSMutableArray *dataArray = [NSMutableArray new];
+    for (int i = 0; i < 30; i++) {
+        [dataArray addObject:[NSString stringWithFormat:@"lyric line %d", i]];
+    }
+    
     LyricSelectionViewController *vc = [LyricSelectionViewController getInstance];
+    vc.delegate = self;
+    vc.lyricArray = dataArray;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

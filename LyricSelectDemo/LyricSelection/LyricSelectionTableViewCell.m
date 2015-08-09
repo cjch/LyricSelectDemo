@@ -31,13 +31,13 @@
 
 #pragma mark - event response
 - (IBAction)onStartButtonPressed:(UIButton *)sender {
-    if (self.delegate) {
+    if ([self.delegate respondsToSelector:@selector(lyricSelectionCellDidPressedStartButtonInRow:)]) {
         [self.delegate lyricSelectionCellDidPressedStartButtonInRow:self.rowNo];
     }
 }
 
 - (IBAction)onEndButtonPressed:(UIButton *)sender {
-    if (!self.delegate) {
+    if ([self.delegate respondsToSelector:@selector(lyricSelectionCellDidPressedEndButtonInRow:)]) {
         [self.delegate lyricSelectionCellDidPressedEndButtonInRow:self.rowNo];
     }
 }

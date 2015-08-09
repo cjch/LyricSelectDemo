@@ -31,13 +31,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start at row: 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-fU-qdY" userLabel="startLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start at row: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-fU-qdY" userLabel="startLabel">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end at row: 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPi-77-NQX" userLabel="endLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end at row: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPi-77-NQX" userLabel="endLabel">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,14 +63,14 @@
                                 <exclude reference="iPi-77-NQX"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="qyq-8Y-sNf"/>
-                                <exclude reference="rix-Ea-O5k"/>
                                 <exclude reference="5pI-yU-PEl"/>
                                 <exclude reference="wpt-2O-BfK"/>
                                 <exclude reference="62B-r6-DjV"/>
                                 <exclude reference="p76-fB-kTc"/>
                                 <exclude reference="2tG-D0-1VF"/>
                                 <exclude reference="iBS-eP-FbC"/>
+                                <exclude reference="qyq-8Y-sNf"/>
+                                <exclude reference="rix-Ea-O5k"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -81,14 +81,14 @@
                                 <include reference="iPi-77-NQX"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="qyq-8Y-sNf"/>
-                                <include reference="rix-Ea-O5k"/>
                                 <include reference="5pI-yU-PEl"/>
                                 <include reference="wpt-2O-BfK"/>
                                 <include reference="62B-r6-DjV"/>
                                 <include reference="p76-fB-kTc"/>
                                 <include reference="2tG-D0-1VF"/>
                                 <include reference="iBS-eP-FbC"/>
+                                <include reference="qyq-8Y-sNf"/>
+                                <include reference="rix-Ea-O5k"/>
                             </mask>
                         </variation>
                     </view>
@@ -111,9 +111,10 @@
                         <viewControllerLayoutGuide type="bottom" id="1BW-vD-89v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sSh-dE-Grv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NIi-Qc-XHT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NIi-Qc-XHT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -134,10 +135,10 @@
                                 <exclude reference="NIi-Qc-XHT"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="rCH-7n-Ipr"/>
                                 <exclude reference="67g-Di-D38"/>
                                 <exclude reference="IgY-Vx-Mwr"/>
                                 <exclude reference="zZi-8J-vk5"/>
-                                <exclude reference="rCH-7n-Ipr"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -145,10 +146,10 @@
                                 <include reference="NIi-Qc-XHT"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="rCH-7n-Ipr"/>
                                 <include reference="67g-Di-D38"/>
                                 <include reference="IgY-Vx-Mwr"/>
                                 <include reference="zZi-8J-vk5"/>
-                                <include reference="rCH-7n-Ipr"/>
                             </mask>
                         </variation>
                     </view>

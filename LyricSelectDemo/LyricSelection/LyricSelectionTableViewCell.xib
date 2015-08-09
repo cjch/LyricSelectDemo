@@ -22,6 +22,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f78-MT-7yf" userLabel="startButton">
                         <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="f78-MT-7yf" secondAttribute="height" multiplier="1:1" id="xaX-vy-ZDY"/>
                         </constraints>
@@ -34,6 +35,7 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGG-cP-4vv" userLabel="endButton">
                         <rect key="frame" x="277" y="0.0" width="43" height="43"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="AGG-cP-4vv" secondAttribute="height" multiplier="1:1" id="P5j-Da-MeX"/>
                         </constraints>
@@ -44,20 +46,31 @@
                             <action selector="onEndButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nWy-yE-J4U"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-RI-TZM" userLabel="sepLine">
+                        <rect key="frame" x="0.0" y="43" width="320" height="0.0"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="hvi-AN-egW"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="AGG-cP-4vv" secondAttribute="trailing" id="0Q2-VN-Fqx"/>
                     <constraint firstItem="f78-MT-7yf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9Ty-PF-HwJ"/>
+                    <constraint firstAttribute="bottom" secondItem="vSQ-RI-TZM" secondAttribute="bottom" id="NBO-Qk-uhZ"/>
                     <constraint firstItem="3OM-9S-NAg" firstAttribute="leading" secondItem="f78-MT-7yf" secondAttribute="trailing" id="Pot-AJ-cMi"/>
                     <constraint firstAttribute="bottom" secondItem="AGG-cP-4vv" secondAttribute="bottom" id="UOY-Oh-DR6"/>
+                    <constraint firstAttribute="trailing" secondItem="vSQ-RI-TZM" secondAttribute="trailing" id="VZX-S3-DHO"/>
                     <constraint firstItem="AGG-cP-4vv" firstAttribute="leading" secondItem="3OM-9S-NAg" secondAttribute="trailing" id="YQk-fd-dHv"/>
                     <constraint firstItem="AGG-cP-4vv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gmL-dV-RYM"/>
                     <constraint firstAttribute="bottom" secondItem="f78-MT-7yf" secondAttribute="bottom" id="hcd-UJ-2A8"/>
+                    <constraint firstItem="vSQ-RI-TZM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="k6s-lG-Ewu"/>
                     <constraint firstItem="f78-MT-7yf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uSC-Pg-mt0"/>
                     <constraint firstAttribute="centerX" secondItem="3OM-9S-NAg" secondAttribute="centerX" id="vta-PG-SoP"/>
                     <constraint firstAttribute="centerY" secondItem="3OM-9S-NAg" secondAttribute="centerY" id="xCl-Rj-2R4"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="lyricLabel" destination="3OM-9S-NAg" id="Olx-iZ-nIB"/>
             </connections>
