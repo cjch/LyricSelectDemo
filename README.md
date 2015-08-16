@@ -1,3 +1,4 @@
 # LyricSelectDemo
 
-歌词片段选择
+片段选择
+使用tableView展示，利用两个手势确定选择区域。
