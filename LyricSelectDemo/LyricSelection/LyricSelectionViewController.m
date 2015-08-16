@@ -196,6 +196,7 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
         
         UIPanGestureRecognizer *startPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGes:)];
         [_selectStartButton addGestureRecognizer:startPan];
+        _selectStartButton.exclusiveTouch = YES;
     }
     
     return _selectStartButton;
@@ -211,6 +212,7 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
         
         UIPanGestureRecognizer *endPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGes:)];
         [_selectEndButton addGestureRecognizer:endPan];
+        _selectEndButton.exclusiveTouch = YES;
     }
     
     return _selectEndButton;
