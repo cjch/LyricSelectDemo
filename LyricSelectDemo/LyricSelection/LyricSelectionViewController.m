@@ -185,7 +185,7 @@ static NSString * const LyricSelectionCellIdentifier = @"LyricSelectionTableView
     [self.tableView reloadData];
 }
 
-#pragma mark - setter
+#pragma mark - getter and setter
 - (UIButton *)selectStartButton
 {
     if (!_selectStartButton) {
